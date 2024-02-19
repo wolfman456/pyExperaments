@@ -22,20 +22,45 @@ def left_cave(ran):
 
 
 def right_cave(ran):
-    play_again()
+    if ran == 2:
+        print("You Enter the right branching path of the cave and you are crushed by a trolls club")
+        game_over("dead")
+    else:
+        print("You Enter the right branching path of the cave and you see a light coming from the other end.")
 
 
 def central_cave(ran):
     print("here")
-    play_again()
+    if ran == 1:
+        print("You Enter the a brightly light cavern with two doors guarded by a dragon. The dragon spots you and "
+              "bathes you in fire. You are dead")
+        game_over("dead")
+    else:
+        return input(
+            "You Enter the a brightly light cavern with two doors, one on the left and one on the right. Which door \n"
+            "do you want to go in to the left or to the right")
 
 
 def left_door(ran):
-    play_again()
+    if ran == 1:
+        print("You Enter the the left door and find a mountain of treasure.")
+        game_over("alive")
+    else:
+        print(
+            "You Enter the left door and find a mountain of of treasure guarded by a dragon. The dragon spots you and "
+            "\n eats you in one bite.")
+        game_over("dead")
 
 
 def right_door(ran):
-    play_again()
+    if ran == 1:
+        print("You Enter the the left door and find a mountain of treasure.")
+        game_over("alive")
+    else:
+        print(
+            "You Enter the left door and find a mountain of of treasure guarded by a dragon. The dragon spots you and "
+            "\n eats you in one bite.")
+        game_over("dead")
 
 
 def game_over(alive_or_dead):
