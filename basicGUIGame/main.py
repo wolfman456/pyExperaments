@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 
+from models.enemy import Enemy
 from models.entity import Player
 
 SCREEN_WIDTH = 800
@@ -17,6 +18,7 @@ def main():
 
     pygame.display.flip()
     player = Player()
+    enemy = Enemy(SCREEN_WIDTH, SCREEN_HEIGHT)
     # Event loop
     while running:
 
@@ -32,7 +34,7 @@ def main():
         pressed_key = pygame.key.get_pressed()
         # probably need to reverse at some point
         player.update(pressed_key, SCREEN_WIDTH, SCREEN_HEIGHT)
-
+        screen.fill((0, 0, 0))
         screen.blit(player.surf, player.rect)
         pygame.display.flip()
 
