@@ -20,15 +20,17 @@ class Player(sprite.Sprite):
             self.rect.move_ip(5, 0)
 
         # Check to see if player hit edge.
+        self.self_checkBounds(SCREEN_WIDTH, SCREEN_HEIGHT)
 
+    def self_checkBounds(self, width, height):
         if self.rect.left < 0:
             self.rect.left = 0
 
-        if self.rect.right > SCREEN_WIDTH:
-            self.rect.right = SCREEN_WIDTH
+        if self.rect.right > width:
+            self.rect.right = width
 
         if self.rect.top <= 0:
             self.rect.top = 0
 
-        if self.rect.bottom >= SCREEN_HEIGHT:
-            self.rect.bottom = SCREEN_HEIGHT
+        if self.rect.bottom >= height:
+            self.rect.bottom = height
