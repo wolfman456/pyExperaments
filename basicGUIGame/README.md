@@ -15,7 +15,7 @@ util directory and move score system there.
 
 ## Task needing completion :
 
-1. Add timer
+1. Add timer - done
 2. Add pause before game starts and after loss
-3. Add score board.
-4. Extract game logic in to functions for cleaner code. 
+3. Add score board. - done
+4. Extract game logic in to functions for cleaner code. - started

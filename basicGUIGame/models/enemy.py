@@ -14,13 +14,6 @@ def get_score():
     return SCORE
 
 
-def display_score(screen):
-    font = pygame.font.Font(None, 36)
-    dis_score = get_score()
-    score_text = font.render(f"Score: {dis_score}", True, "white")
-    screen.blit(score_text, (10, 10))
-
-
 class Enemy(sprite.Sprite):
     def __init__(self, width, height):
         super(Enemy, self).__init__()

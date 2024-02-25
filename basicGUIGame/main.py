@@ -3,7 +3,8 @@ import time
 import pygame
 from pygame.locals import *
 
-from models.enemy import Enemy, display_score
+from models.enemy import Enemy
+from util.util import display_score, timer
 from models.entity import Player
 
 SCREEN_WIDTH = 800
@@ -55,8 +56,9 @@ def main():
         screen.fill((0, 0, 0))
         for entity in all_sprites:
             screen.blit(entity.surf, entity.rect)
-        print(pygame.time.get_ticks() // 1000, 'seconds elapsed')
+
         display_score(screen)
+        timer(screen)
         if pygame.sprite.spritecollideany(player, enemies):
             player.kill()
             running = False
