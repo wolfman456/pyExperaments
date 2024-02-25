@@ -1,17 +1,8 @@
 import random
-import pygame
+
 from pygame import sprite, Surface
 
-SCORE = 0
-
-
-def score():
-    global SCORE
-    SCORE += 1
-
-
-def get_score():
-    return SCORE
+from util.util import score
 
 
 class Enemy(sprite.Sprite):

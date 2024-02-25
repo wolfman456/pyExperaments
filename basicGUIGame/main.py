@@ -1,10 +1,8 @@
-import time
-
 import pygame
 from pygame.locals import *
 
 from models.enemy import Enemy
-from util.util import display_score, timer
+from util.util import display_score, timer, game_over
 from models.entity import Player
 
 SCREEN_WIDTH = 800
@@ -28,8 +26,6 @@ def main():
     enemies = pygame.sprite.Group()
     all_sprites = pygame.sprite.Group()
     all_sprites.add(player)
-
-    text_surface = pygame.font.get_default_font()
 
     # Event loop
     while running:
@@ -56,11 +52,11 @@ def main():
         screen.fill((0, 0, 0))
         for entity in all_sprites:
             screen.blit(entity.surf, entity.rect)
-
         display_score(screen)
         timer(screen)
         if pygame.sprite.spritecollideany(player, enemies):
             player.kill()
+            game_over(screen, SCREEN_WIDTH, SCREEN_HEIGHT)
             running = False
         pygame.display.flip()
         pygame.time.Clock().tick(60)
