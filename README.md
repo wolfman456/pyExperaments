@@ -2,8 +2,11 @@
 
 series of python projects
 
-| Project Name              | Status  | Link                                                                                  |
-|---------------------------|---------|---------------------------------------------------------------------------------------|
-| Tip Calculator            | done    | [tipCalculator](https://github.com/wolfman456/pyExperaments/tree/master/tipCalulator) |
-| Choose your own adventure | done    | [Adventure](https://github.com/wolfman456/pyExperaments/tree/master/adventure1)       |
-| basic gui game            | started | [Dodge Game](https://github.com/wolfman456/pyExperaments/tree/master/basicGUIGame)    |
+| Project Name              | Status      | Link                                                                                  |
+|---------------------------|-------------|---------------------------------------------------------------------------------------|
+| Tip Calculator            | done        | [tipCalculator](https://github.com/wolfman456/pyExperaments/tree/master/tipCalulator) |
+| Choose your own adventure | done        | [Adventure](https://github.com/wolfman456/pyExperaments/tree/master/adventure1)       |
+| basic gui game            | done        | [Dodge Game](https://github.com/wolfman456/pyExperaments/tree/master/basicGUIGame)    |
+| Hang man                  | not started |                                                                                       |
+| break out                 | not started |                                                                                       |
+| flask API                 | Not started |                                                                                       |
