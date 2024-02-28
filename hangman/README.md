@@ -21,7 +21,7 @@ I will replace the static list with the CSV file.
 | Item Nam                          | Status | Comment |
 |-----------------------------------|--------|---------|
 | Flow chart design                 | done   | draw.io |
-| create list and guessing function |        |         |
+| create list and guessing function | done   |         |
 | create tracker                    |        |         |
 | create ASCII art                  |        |         |
 | replace list with CSV file        |        |         |
