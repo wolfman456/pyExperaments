@@ -1,4 +1,4 @@
-#Hangman:
+# Hangman :
 In this project, I want to use multiple directory to separate out functions. I am also planning to
 use a CSV file to load the word list. This will also be the first time I attempt the use of ASCII art.
 I plan to start with a static list of words. One of these words will then be chosen at random from there, the user will
