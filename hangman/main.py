@@ -1,4 +1,4 @@
-from util.game_util import get_word, check_word
+from util.game_util import get_word, check_word, game_over_check
 
 
 def main():
@@ -7,6 +7,8 @@ def main():
     while running:
         guess = input("Guess a letter: ")
         check_word(guess)
+        game_over_check(running)
+
 
 
 if __name__ == "__main__":
