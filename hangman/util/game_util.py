@@ -1,6 +1,7 @@
 import random
 
 from util.acii import HANGMANPICS
+from util.word_list import get_word_list
 
 chosen_word = ""
 word_len = 0
@@ -10,8 +11,7 @@ live = 0
 
 def get_word():
     global chosen_word, word_len
-    word_list = ['dog', 'cat', 'elephant', 'sheep']
-    chosen_word = random.choice(word_list)
+    chosen_word = random.choice(get_word_list())
     word_len = len(chosen_word)
     print(chosen_word)
     create_blank_word()

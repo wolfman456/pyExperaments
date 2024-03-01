@@ -24,7 +24,7 @@ I will replace the static list with the CSV file.
 | create list and guessing function | done   |                                                                                  |
 | create tracker                    | done   |                                                                                  |
 | create ASCII art                  | done   | [ACII art](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) |
-| replace list with CSV file        |        |                                                                                  |
+| replace list with txt file        | done   |                                                                                  |
 | create unit tests                 |        |                                                                                  |
 
 ## Tech Used :
