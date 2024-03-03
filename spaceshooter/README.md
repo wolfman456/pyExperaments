@@ -13,7 +13,7 @@ to score. The rectangles will also be replaced with drawing in this version.
 | Create scree                    | done   |         |
 | Add ship                        | done   |         |
 | make ship move                  | done   |         |
-| add bounds                      |        |         |
+| add bounds                      | done   |         |
 | make ship shoot                 |        |         |
 | add enemy ship                  |        |         |
 | score board                     |        |         |

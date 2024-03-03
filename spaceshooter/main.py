@@ -24,7 +24,7 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         keys = pygame.key.get_pressed()
-        player.update(keys, SCREEN_WIDTH, SCREEN_HEIGHT)
+        player.update(keys, SCREEN_WIDTH)
 
         screen.fill((0, 0, 0))
         screen.blit(player.surf, player.rect)
