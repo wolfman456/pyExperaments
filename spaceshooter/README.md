@@ -11,8 +11,9 @@ to score. The rectangles will also be replaced with drawing in this version.
 | Task                            | status | comment |
 |---------------------------------|--------|---------|
 | Create scree                    | done   |         |
-| Add ship                        |        |         |
-| make ship move                  |        |         |
+| Add ship                        | done   |         |
+| make ship move                  | done   |         |
+| add bounds                      |        |         |
 | make ship shoot                 |        |         |
 | add enemy ship                  |        |         |
 | score board                     |        |         |
@@ -26,6 +27,6 @@ to score. The rectangles will also be replaced with drawing in this version.
 
 ### Technology Used :
 
-| Tech name | Use In project |
-|-----------|----------------|
-|           |                |
+| Tech name                                          | Use In project          |
+|----------------------------------------------------|-------------------------|
+| [opengameart](https://opengameart.org/users/kev93) | Used to locate game art |
