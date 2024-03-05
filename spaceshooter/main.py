@@ -14,11 +14,16 @@ pygame.display.set_caption("space shooter")
 clock = pygame.time.Clock()
 dt = 0
 player = Player()
+all_sprites = pygame.sprite.Group()
+enemies = pygame.sprite.Group()
+bullet_group = pygame.sprite.Group()
+all_sprites.add(player)
 
 
 def main():
     running = True
     pygame.init()
+
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -27,7 +32,8 @@ def main():
         player.update(keys, SCREEN_WIDTH)
 
         screen.fill((0, 0, 0))
-        screen.blit(player.surf, player.rect)
+        for entity in all_sprites:
+            screen.blit(entity.surf, entity.rect)
         pygame.display.flip()
 
 
