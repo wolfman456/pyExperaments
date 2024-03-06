@@ -15,7 +15,7 @@ to score. The rectangles will also be replaced with drawing in this version.
 | make ship move                  | done   |                                                              |
 | add bounds                      | done   |                                                              |
 | make ship shoot                 | done   | centering firing on ship not as simple as originally thought |
-| add enemy ship                  |        |                                                              |
+| add enemy ship                  | done   |                                                              |
 | score board                     |        |                                                              |
 | collision detection             |        |                                                              |
 | end Screen                      |        |                                                              |
