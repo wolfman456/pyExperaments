@@ -1,5 +1,7 @@
 import pygame
+from pygame.locals import K_SPACE
 
+from entity.bullet import Bullet
 from entity.player import Player
 
 SCREEN_WIDTH = 800
@@ -17,7 +19,10 @@ player = Player()
 all_sprites = pygame.sprite.Group()
 enemies = pygame.sprite.Group()
 bullet_group = pygame.sprite.Group()
+
 all_sprites.add(player)
+
+all_sprites.add(bullet_group)
 
 
 def main():
@@ -29,8 +34,15 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         keys = pygame.key.get_pressed()
-        player.update(keys, SCREEN_WIDTH)
 
+        if keys[K_SPACE]:
+            print("key")
+            bullet = Bullet(player.rect.left)
+            bullet_group.add(bullet)
+            all_sprites.add(bullet_group)
+
+        player.update(keys, SCREEN_WIDTH)
+        bullet_group.update()
         screen.fill((0, 0, 0))
         for entity in all_sprites:
             screen.blit(entity.surf, entity.rect)

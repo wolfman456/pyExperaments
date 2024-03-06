@@ -8,20 +8,21 @@ to score. The rectangles will also be replaced with drawing in this version.
 
 ## Checklist:
 
-| Task                            | status | comment |
-|---------------------------------|--------|---------|
-| Create scree                    | done   |         |
-| Add ship                        | done   |         |
-| make ship move                  | done   |         |
-| add bounds                      | done   |         |
-| make ship shoot                 |        |         |
-| add enemy ship                  |        |         |
-| score board                     |        |         |
-| collision detection             |        |         |
-| end Screen                      |        |         |
-| save score                      |        |         |
-| start screen/create player name |        |         |
-| levels?                         |        |         |
+| Task                            | status | comment                                                      |
+|---------------------------------|--------|--------------------------------------------------------------|
+| Create scree                    | done   |                                                              |
+| Add ship                        | done   |                                                              |
+| make ship move                  | done   |                                                              |
+| add bounds                      | done   |                                                              |
+| make ship shoot                 | done   | centering firing on ship not as simple as originally thought |
+| add enemy ship                  |        |                                                              |
+| score board                     |        |                                                              |
+| collision detection             |        |                                                              |
+| end Screen                      |        |                                                              |
+| save score                      |        |                                                              |
+| start screen/create player name |        |                                                              |
+| refractor code                  |        |                                                              |
+| levels?                         |        |                                                              |
 
 ### Future Plans :
 
