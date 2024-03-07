@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import K_SPACE
 
+from Util.util import check_collision, get_is_running
 from entity.bullet import Bullet
 from entity.enemy import Enemy
 from entity.player import Player
@@ -8,14 +9,9 @@ from entity.player import Player
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
-
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("space shooter")
 clock = pygame.time.Clock()
-dt = 0
 player = Player()
 all_sprites = pygame.sprite.Group()
 enemies = pygame.sprite.Group()
@@ -43,7 +39,6 @@ def main():
         keys = pygame.key.get_pressed()
 
         if keys[K_SPACE]:
-            print("key")
             bullet = Bullet(player.rect.left)
             bullet_group.add(bullet)
             all_sprites.add(bullet_group)
@@ -54,8 +49,11 @@ def main():
         screen.fill((0, 0, 0))
         for entity in all_sprites:
             screen.blit(entity.surf, entity.rect)
+        check_collision(player, enemies, bullet_group, screen, SCREEN_WIDTH, SCREEN_HEIGHT)
+        running = get_is_running()
         pygame.display.flip()
         pygame.time.Clock().tick(60)
+
 
 if __name__ == '__main__':
     main()

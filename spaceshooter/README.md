@@ -6,6 +6,8 @@ to score. The rectangles will also be replaced with drawing in this version.
 
 ## Issues faced :
 
+1. Getting a bullet to collide with enemy ship.
+
 ## Checklist:
 
 | Task                            | status | comment                                                      |
@@ -17,14 +19,17 @@ to score. The rectangles will also be replaced with drawing in this version.
 | make ship shoot                 | done   | centering firing on ship not as simple as originally thought |
 | add enemy ship                  | done   |                                                              |
 | score board                     |        |                                                              |
-| collision detection             |        |                                                              |
+| collision detection             | done   |                                                              |
 | end Screen                      |        |                                                              |
 | save score                      |        |                                                              |
 | start screen/create player name |        |                                                              |
-| refractor code                  |        |                                                              |
-| levels?                         |        |                                                              |
+| refactor code                   |        |                                                              |
 
 ### Future Plans :
+1. Sdd levels
+2. At this point, it would take little effort to alter this in to a space invader type game. So this is a possible 
+continuation of this project.
+3. Add a fancier background. 
 
 ### Technology Used :
 
