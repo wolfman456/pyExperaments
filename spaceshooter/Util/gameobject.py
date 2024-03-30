@@ -1,10 +1,13 @@
 import pygame
 
+from entity import player
+
 
 class ShooterObject:
     def __init__(self):
         self._init_pygame()
         self.screen = pygame.display.set_mode((800, 600))
+        self.player = player.Player()
 
     def _load_screen(self):
         print("here")
@@ -16,8 +19,6 @@ class ShooterObject:
     def main_loop(self):
 
         while True:
-            self._load_screen()
-
             self._handle_input()
 
             self._process_game_logic()
@@ -25,7 +26,11 @@ class ShooterObject:
             self._draw()
 
     def _draw(self):
+        all_sprites = pygame.sprite.Group()
+        all_sprites.add(self.player)
         self.screen.fill((0, 0, 0))
+        for entity in all_sprites:
+            self.screen.blit(entity.surf, entity.rect)
         pygame.display.flip()
 
     def _init_pygame(self):
@@ -37,6 +42,8 @@ class ShooterObject:
             if event.type == pygame.QUIT or (
                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 quit()
+            event.keys = pygame.key.get_pressed()
+            self.player.update(event, self.screen.get_width())
 
     def _process_game_logic(self):
         pass
