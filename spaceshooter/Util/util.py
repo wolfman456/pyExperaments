@@ -2,6 +2,8 @@ import time
 
 import pygame
 
+from model.enemy import Enemy
+
 running = True
 
 
@@ -32,3 +34,10 @@ def game_over(screen, width, height):
     screen.blit(game_over_text, (width / 2 - 75, height / 2))
     pygame.display.flip()
     time.sleep(5)
+
+
+def add_enemy(game_object, event):
+    if event.type == game_object.ADD:
+        enemy = Enemy(game_object)
+        game_object.enemies.add(enemy)
+        game_object.all_sprites.add(game_object.enemies)

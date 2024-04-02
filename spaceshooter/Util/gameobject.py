@@ -1,5 +1,6 @@
 import pygame
 
+from Util.util import add_enemy
 from model import player
 from model.enemy import Enemy
 
@@ -12,11 +13,10 @@ class ShooterObject:
         self.all_sprites = pygame.sprite.Group()
         self.enemies = pygame.sprite.Group()
         self.bullets = pygame.sprite.Group()
-        self.all_sprites.add(self.player, self.enemies,self.bullets)
+        self.all_sprites.add(self.player, self.enemies, self.bullets)
         self.timer = pygame.time.Clock()
         self.score = 0
         self.ADD = pygame.USEREVENT + 1
-
 
     def _load_screen(self):
         print("here")
@@ -53,10 +53,7 @@ class ShooterObject:
             if event.type == pygame.QUIT or (
                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 quit()
-            if event.type == self.ADD:
-                enemy = Enemy(self)
-                self.enemies.add(enemy)
-                self.all_sprites.add(self.enemies)
+            add_enemy(self, event)
             self.keys = pygame.key.get_pressed()
 
     def _process_game_logic(self):

@@ -9,7 +9,7 @@ class Player(pygame.sprite.Sprite):
 
     def __init__(self):
         super(Player, self).__init__()
-        self.surf = pygame.image.load("spaceshooter/resources"
+        self.surf = pygame.image.load("/home/bloodwolf/project/python/pyExperaments/spaceshooter/resources"
                                       "/SpaceShipSmall.png").convert()
 
         self.surf.set_colorkey((0, 0, 0), RLEACCEL)
