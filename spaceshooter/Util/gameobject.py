@@ -1,6 +1,6 @@
 import pygame
 
-from Util.util import add_enemy
+from Util.util import add_enemy, draw_to_screen, check_collision
 from model import player
 from model.enemy import Enemy
 
@@ -8,6 +8,8 @@ from model.enemy import Enemy
 class ShooterObject:
     def __init__(self):
         self._init_game()
+        self.game_loop = False
+        self.welcome_loop = True
         self.screen = pygame.display.set_mode((800, 600))
         self.player = player.Player()
         self.all_sprites = pygame.sprite.Group()
@@ -19,15 +21,19 @@ class ShooterObject:
         self.ADD = pygame.USEREVENT + 1
 
     def _load_screen(self):
-        print("here")
         font = pygame.font.Font(None, 36)
         welcome = font.render("Welcome", True, "white")
-        self.screen.blit(welcome, (self.screen.get_width() / 2, self.screen.get_height() / 2))
+        self.screen.blit(welcome, (self.screen.get_width() / 2 - 20, self.screen.get_height() / 2))
         pygame.display.flip()
 
     def main_loop(self):
+
+        while self.welcome_loop:
+            self._handle_input()
+            self._load_screen()
+
         pygame.time.set_timer(self.ADD, 500)
-        while True:
+        while self.game_loop:
             self._handle_input()
 
             self._process_game_logic()
@@ -35,14 +41,7 @@ class ShooterObject:
             self._draw()
 
     def _draw(self):
-        self.player.update(self)
-        self.bullets.update()
-        self.enemies.update()
-        self.screen.fill((0, 0, 0))
-        for entity in self.all_sprites:
-            self.screen.blit(entity.surf, entity.rect)
-        pygame.display.flip()
-        self.timer.tick(60)
+        draw_to_screen(self)
 
     def _init_game(self):
         pygame.init()
@@ -57,9 +56,4 @@ class ShooterObject:
             self.keys = pygame.key.get_pressed()
 
     def _process_game_logic(self):
-        pass
-
-
-if __name__ == '__main__':
-    shooter = ShooterObject()
-    shooter.main_loop()
+        check_collision(self)

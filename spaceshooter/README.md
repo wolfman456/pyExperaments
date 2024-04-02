@@ -10,29 +10,31 @@ to score. The rectangles will also be replaced with drawing in this version.
 
 ## Checklist:
 
-| Task                            | status  | comment                                                      |
-|---------------------------------|---------|--------------------------------------------------------------|
-| Create scree                    | done    |                                                              |
-| Add ship                        | done    |                                                              |
-| make ship move                  | done    |                                                              |
-| add bounds                      | done    |                                                              |
-| make ship shoot                 | done    | centering firing on ship not as simple as originally thought |
-| add enemy ship                  | done    |                                                              |
-| score board                     |         |                                                              |
-| collision detection             | done    |                                                              |
-| end Screen                      |         |                                                              |
-| save score                      |         |                                                              |
-| start screen/create player name |         |                                                              |
-| refactor code                   | started | multi step process                                           |
+| Task                            | status      | comment                                                      |
+|---------------------------------|-------------|--------------------------------------------------------------|
+| Create scree                    | done        |                                                              |
+| Add ship                        | done        |                                                              |
+| make ship move                  | done        |                                                              |
+| add bounds                      | done        |                                                              |
+| make ship shoot                 | done        | centering firing on ship not as simple as originally thought |
+| add enemy ship                  | done        |                                                              |
+| score board                     |             |                                                              |
+| collision detection             | done        |                                                              |
+| end Screen                      |             |                                                              |
+| save score                      |             |                                                              |
+| start screen/create player name | in progress |                                                              |
+| refactor code                   | complete    | multi step process                                           |
 
 | Refactoring Step                          | Status      |
 |-------------------------------------------|-------------|
 | create skeleton of game object            | complete    |
-| Move game logic in to game object         | in progress |
+| Move game logic in to game object         | complete    |
 | Ship added to screen                      | complete    |
 | fixed ship movement so it is smooth again | complete    |
-| ship shooting                             | completed   |
-| enemy ships                               |             |
+| ship shooting                             | complete    |
+| enemy ships                               | complete    |
+| abstract fuctionality out of main methods | complete    |
+| create load screen logic                  | in progress | 
 
 ### Future Plans :
 

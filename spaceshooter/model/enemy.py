@@ -22,7 +22,7 @@ class Enemy(sprite.Sprite):
             )
         )
 
-        self.speed = 10
+        self.speed = 5
 
     def update(self):
         self.rect.move_ip(0, +self.speed)
