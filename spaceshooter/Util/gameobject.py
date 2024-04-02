@@ -1,7 +1,6 @@
 import pygame
 
 from model import player
-from model.bullet import Bullet
 from model.enemy import Enemy
 
 
@@ -10,12 +9,14 @@ class ShooterObject:
         self._init_game()
         self.screen = pygame.display.set_mode((800, 600))
         self.player = player.Player()
-        self.enemy = Enemy(self)
         self.all_sprites = pygame.sprite.Group()
         self.enemies = pygame.sprite.Group()
         self.bullets = pygame.sprite.Group()
         self.all_sprites.add(self.player, self.enemies,self.bullets)
         self.timer = pygame.time.Clock()
+        self.score = 0
+        self.ADD = pygame.USEREVENT + 1
+
 
     def _load_screen(self):
         print("here")
@@ -25,7 +26,7 @@ class ShooterObject:
         pygame.display.flip()
 
     def main_loop(self):
-
+        pygame.time.set_timer(self.ADD, 500)
         while True:
             self._handle_input()
 
@@ -36,6 +37,7 @@ class ShooterObject:
     def _draw(self):
         self.player.update(self)
         self.bullets.update()
+        self.enemies.update()
         self.screen.fill((0, 0, 0))
         for entity in self.all_sprites:
             self.screen.blit(entity.surf, entity.rect)
@@ -51,7 +53,10 @@ class ShooterObject:
             if event.type == pygame.QUIT or (
                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 quit()
-
+            if event.type == self.ADD:
+                enemy = Enemy(self)
+                self.enemies.add(enemy)
+                self.all_sprites.add(self.enemies)
             self.keys = pygame.key.get_pressed()
 
     def _process_game_logic(self):
