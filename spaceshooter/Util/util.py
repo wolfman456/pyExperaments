@@ -9,8 +9,8 @@ def self_check_bounds(self, game_object):
     if self.rect.left < 0:
         self.rect.left = 0
 
-    if self.rect.right > game_object:
-        self.rect.right = game_object
+    if self.rect.right > game_object.screen.get_width():
+        self.rect.right = game_object.screen.get_width()
 
 
 def check_collision(player, enemies, bullet_group, screen, width, height):

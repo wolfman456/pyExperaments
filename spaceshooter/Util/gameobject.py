@@ -1,13 +1,21 @@
 import pygame
 
-from entity import player
+from model import player
+from model.bullet import Bullet
+from model.enemy import Enemy
 
 
 class ShooterObject:
     def __init__(self):
-        self._init_pygame()
+        self._init_game()
         self.screen = pygame.display.set_mode((800, 600))
         self.player = player.Player()
+        self.enemy = Enemy(self)
+        self.all_sprites = pygame.sprite.Group()
+        self.enemies = pygame.sprite.Group()
+        self.bullets = pygame.sprite.Group()
+        self.all_sprites.add(self.player, self.enemies,self.bullets)
+        self.timer = pygame.time.Clock()
 
     def _load_screen(self):
         print("here")
@@ -26,14 +34,15 @@ class ShooterObject:
             self._draw()
 
     def _draw(self):
-        all_sprites = pygame.sprite.Group()
-        all_sprites.add(self.player)
+        self.player.update(self)
+        self.bullets.update()
         self.screen.fill((0, 0, 0))
-        for entity in all_sprites:
+        for entity in self.all_sprites:
             self.screen.blit(entity.surf, entity.rect)
         pygame.display.flip()
+        self.timer.tick(60)
 
-    def _init_pygame(self):
+    def _init_game(self):
         pygame.init()
         pygame.display.set_caption('Space shooter')
 
@@ -42,8 +51,8 @@ class ShooterObject:
             if event.type == pygame.QUIT or (
                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 quit()
-            event.keys = pygame.key.get_pressed()
-            self.player.update(event, self.screen.get_width())
+
+            self.keys = pygame.key.get_pressed()
 
     def _process_game_logic(self):
         pass

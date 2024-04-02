@@ -25,14 +25,18 @@ to score. The rectangles will also be replaced with drawing in this version.
 | start screen/create player name |         |                                                              |
 | refactor code                   | started | multi step process                                           |
 
-| Refactoring Step                  | Status   |
-|-----------------------------------|----------|
-| create skeleton of game object    | complete |
-| Move game logic in to game object |          |
+| Refactoring Step                          | Status      |
+|-------------------------------------------|-------------|
+| create skeleton of game object            | complete    |
+| Move game logic in to game object         | in progress |
+| Ship added to screen                      | complete    |
+| fixed ship movement so it is smooth again | complete    |
+| ship shooting                             | completed   |
+| enemy ships                               |             |
 
 ### Future Plans :
 
-1. Sdd levels
+1. Add levels
 2. At this point, it would take little effort to alter this in to a space invader type game. So this is a possible
    continuation of this project.
 3. Add a fancier background.

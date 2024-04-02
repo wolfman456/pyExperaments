@@ -2,9 +2,9 @@ import pygame
 from pygame.locals import K_SPACE
 
 from Util.util import check_collision, get_is_running
-from entity.bullet import Bullet
-from entity.enemy import Enemy
-from entity.player import Player
+from model.bullet import Bullet
+from model.enemy import Enemy
+from model.player import Player
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
