@@ -1,4 +1,4 @@
-from Util.gameobject import ShooterObject
+from model.gameobject import ShooterObject
 
 if __name__ == '__main__':
     shooter = ShooterObject()
