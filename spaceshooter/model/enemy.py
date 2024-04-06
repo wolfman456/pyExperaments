@@ -8,8 +8,8 @@ from pygame.locals import RLEACCEL
 class Enemy(sprite.Sprite):
     def __init__(self, game_object):
         sprite.Sprite.__init__(self)
-        self.surf = pygame.image.load("/home/bloodwolf/project/python/pyExperaments/spaceshooter/resources"
-                                      "/Spaceship004.png").convert_alpha()
+        self.surf = pygame.image.load(
+            "/home/bloodwolf/project/python/pyExperaments/spaceshooter/model/enemy.py").convert_alpha()
         self.rect = pygame.transform.scale(self.surf, (20, 30))
 
         self.surf.set_colorkey((0, 0, 0), RLEACCEL)
