@@ -8,6 +8,7 @@ from model.welcome_menu import WelcomeMenu
 class ShooterObject:
     def __init__(self):
         self._init_game()
+        self.time_delta = None
         self.game_loop = False
         self.welcome_loop = True
         self.screen = pygame.display.set_mode((800, 600))
@@ -16,18 +17,11 @@ class ShooterObject:
         self.enemies = pygame.sprite.Group()
         self.bullets = pygame.sprite.Group()
         self.score = 0
-
         self.timer = pygame.time.Clock()
         self.ADD = pygame.USEREVENT + 1
-        self.welcome = WelcomeMenu(self)
-        self.buttons = pygame.sprite.Group()
-        self.load_group = pygame.sprite.Group(self.welcome, self.buttons)
-        self.all_sprites.add(self.player, self.enemies, self.bullets,self.load_group)
+        self.all_sprites.add(self.player, self.enemies, self.bullets)
 
     def _load_screen(self):
-        # font = pygame.font.Font(None, 36)
-        # welcome = font.render("Welcome", True, "white")
-        # self.screen.blit(welcome, (self.screen.get_width() / 2 - 20, self.screen.get_height() / 2))
         self._handle_input()
         self._draw()
 
@@ -37,6 +31,7 @@ class ShooterObject:
             self._load_screen()
 
         pygame.time.set_timer(self.ADD, 500)
+        self.time_delta = self.timer.tick(60) / 1000.0
         while self.game_loop:
             self._handle_input()
 
