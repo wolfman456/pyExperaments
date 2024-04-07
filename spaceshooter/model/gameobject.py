@@ -47,7 +47,8 @@ class ShooterObject:
         if self.welcome_loop:
             self.welcome_message.draw(self.screen)
             self.start_button.draw(self.screen)
-            pygame.display.update()
+
+        pygame.display.update()
 
     def _init_game(self):
         pygame.init()
