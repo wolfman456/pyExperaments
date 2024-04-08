@@ -1,8 +1,6 @@
-import time
-
 import pygame
 
-from model.enemy import Enemy
+from Util.screen_util import game_over
 
 running = True
 
@@ -28,25 +26,3 @@ def get_is_running():
     return running
 
 
-def game_over(screen, width, height):
-    font = pygame.font.Font(None, 36)
-    game_over_text = font.render("GAME OVER", True, "white")
-    screen.blit(game_over_text, (width / 2 - 75, height / 2))
-    pygame.display.flip()
-    time.sleep(5)
-
-
-def add_enemy(game_object, event):
-    if event.type == game_object.ADD:
-        enemy = Enemy(game_object)
-        game_object.enemies.add(enemy)
-        game_object.all_sprites.add(game_object.enemies)
-
-
-def draw_to_screen(game_object):
-    game_object.player.update(game_object)
-    game_object.bullets.update()
-    game_object.enemies.update()
-    game_object.screen.fill((0, 0, 0))
-    for entity in game_object.all_sprites:
-        game_object.screen.blit(entity.surf, entity.rect)

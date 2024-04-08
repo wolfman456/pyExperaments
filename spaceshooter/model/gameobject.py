@@ -1,6 +1,7 @@
 import pygame
 
-from Util.util import add_enemy, draw_to_screen, check_collision
+from Util.screen_util import draw_welcome, draw_to_screen, add_enemy
+from Util.util import check_collision
 from model import player
 from model.button import Button
 from model.welcome_message import WelcomeMessage
@@ -24,7 +25,7 @@ class ShooterObject:
         self.start_img = (pygame.image.load(
             '/home/bloodwolf/project/python/pyExperaments/spaceshooter/image/start-1.png')).convert_alpha()
         self.start_button = Button(100, 200, self.start_img, 0.8)
-        self.welcome_message = WelcomeMessage()
+        self.welcome_message = WelcomeMessage(self)
 
     def main_loop(self):
         while self.welcome_loop:
@@ -44,11 +45,7 @@ class ShooterObject:
         if self.game_loop:
             draw_to_screen(self)
         if self.welcome_loop:
-            self.welcome_message.draw(self.screen)
-            if self.start_button.draw(self.screen):
-                self.welcome_loop = False
-                self.game_loop = True
-                self.screen.fill((0, 0, 0))
+            draw_welcome(self)
 
         pygame.display.update()
         self.timer.tick(60)

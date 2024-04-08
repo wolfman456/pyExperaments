@@ -28,4 +28,3 @@ class Enemy(sprite.Sprite):
         self.rect.move_ip(0, +self.speed)
         if self.rect.top < 0:
             self.kill()
-            # score()
