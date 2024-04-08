@@ -50,5 +50,3 @@ def draw_to_screen(game_object):
     game_object.screen.fill((0, 0, 0))
     for entity in game_object.all_sprites:
         game_object.screen.blit(entity.surf, entity.rect)
-    pygame.display.flip()
-    game_object.timer.tick(60)
