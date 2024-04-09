@@ -18,7 +18,6 @@ class Button:
         if self.rect.collidepoint(pos):
             if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
                 self.clicked = True
-                print("clicked")
                 return True
 
         screen.blit(self.image, (self.rect.x, self.rect.y))

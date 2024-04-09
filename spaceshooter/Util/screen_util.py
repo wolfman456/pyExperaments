@@ -13,10 +13,11 @@ def game_over(game_object):
 
 
 def add_enemy(game_object, event):
-    if event.type == game_object.ADD:
+    if event.type == game_object.ADD and game_object.enemy_count <= 4:
         enemy = Enemy(game_object)
         game_object.enemies.add(enemy)
         game_object.all_sprites.add(game_object.enemies)
+        game_object.enemy_count += 1
 
 
 def draw_to_screen(game_object):
@@ -30,6 +31,10 @@ def draw_to_screen(game_object):
 
 def draw_welcome(game_object):
     game_object.welcome_message.draw(game_object.screen)
+    if game_object.exit_button.draw(game_object.screen):
+        game_object.welcome_loop = False
+    if game_object.high_score.draw(game_object.screen):
+        print("high score")
     if game_object.start_button.draw(game_object.screen):
         game_object.welcome_loop = False
         game_object.game_loop = True

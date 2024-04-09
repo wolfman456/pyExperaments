@@ -1,8 +1,10 @@
 # Space shooter :
 
+
+## starting plan :
 Space shooter will be a more electorate version of the previous dodger typy game.
 With the enemy targets coming from above and going down. Additionally, the player will be able to shoot at the ship
-to score. The rectangles will also be replaced with drawing in this version.
+to score. The rectangles will be replaced with drawing in this version.
 
 ## Issues faced :
 
@@ -22,19 +24,21 @@ to score. The rectangles will also be replaced with drawing in this version.
 | collision detection             | done        |                                                              |
 | end Screen                      |             |                                                              |
 | save score                      |             |                                                              |
-| start screen/create player name | in progress |                                                              |
-| refactor code                   | complete    | multi step process                                           |
+| start screen/create player name | done        | functional buttons lead to more changes then expected        |
+| refactor code                   | first round | multi step process                                           |
+| load image function             | done        |                                                              |
+| High score screen               |             |                                                              |
 
-| Refactoring Step                          | Status      |
-|-------------------------------------------|-------------|
-| create skeleton of game object            | complete    |
-| Move game logic in to game object         | complete    |
-| Ship added to screen                      | complete    |
-| fixed ship movement so it is smooth again | complete    |
-| ship shooting                             | complete    |
-| enemy ships                               | complete    |
-| abstract fuctionality out of main methods | complete    |
-| create load screen logic                  | in progress | 
+| Refactoring Step                           | Status      |
+|--------------------------------------------|-------------|
+| create skeleton of game object             | complete    |
+| Move game logic in to game object          | complete    |
+| Ship added to screen                       | complete    |
+| fixed ship movement so it is smooth again  | complete    |
+| ship shooting                              | complete    |
+| enemy ships                                | complete    |
+| abstract functionality out of main methods | complete    |
+| create load screen logic                   | in progress | 
 
 ### Future Plans :
 
