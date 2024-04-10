@@ -13,3 +13,7 @@ def check_collision(game_object):
         game_object.player.kill()
 
     pygame.sprite.groupcollide(game_object.bullets, game_object.enemies, True, True)
+
+
+
+
