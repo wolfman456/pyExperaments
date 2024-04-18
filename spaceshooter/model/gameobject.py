@@ -5,6 +5,7 @@ from Util.screen_util import draw_welcome, draw_to_screen, add_enemy
 from Util.util import check_collision
 from model import player
 from model.button import Button
+from model.score import Score
 from model.welcome_message import WelcomeMessage
 
 
@@ -18,7 +19,7 @@ class ShooterObject:
         self.all_sprites = pygame.sprite.Group()
         self.enemies = pygame.sprite.Group()
         self.bullets = pygame.sprite.Group()
-        self.score = 0
+        self.score = Score(game_object=self)
         self.timer = pygame.time.Clock()
         self.ADD = pygame.USEREVENT + 1
         self.all_sprites.add(self.player, self.enemies, self.bullets)
@@ -30,6 +31,7 @@ class ShooterObject:
                                  loadimage('high_score.png'), 0.8)
         self.welcome_message = WelcomeMessage(self)
         self.enemy_count = 0
+
 
     def _init_game(self):
         pygame.init()

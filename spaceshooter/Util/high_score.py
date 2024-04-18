@@ -20,13 +20,11 @@ class HighScore:
             print("error writing high scores" + str(x))
 
     def get_high_score(self):
-        with open(PATH, 'r') as file:
-            lines = file.readlines()
-            high_score = [tuple(line.strip('(').strip(')').strip(',').split()) for line in lines]
-            self.high_scores.append(high_score)
-            print(self.high_scores[0][2])
-
-
-high_score1 = HighScore()
-high_score1.save()
-high_score1.get_high_score()
+        try:
+            with open(PATH, 'r') as file:
+                lines = file.readlines()
+                high_score = [tuple(line.strip('(').strip(')').strip(',').split()) for line in lines]
+                self.high_scores.append(high_score)
+                print(self.high_scores[0][2])
+        except (FileNotFoundError, RuntimeError) as x:
+            print("error reading high scores" + str(x))
