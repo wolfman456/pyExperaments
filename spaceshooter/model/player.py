@@ -1,3 +1,5 @@
+import time
+
 import pygame
 from pygame.locals import RLEACCEL, K_LEFT, K_a, K_d, K_RIGHT, K_SPACE
 from model.bullet import Bullet
@@ -15,6 +17,7 @@ class Player(pygame.sprite.Sprite):
         self.surf.set_colorkey((0, 0, 0), RLEACCEL)
 
         self.rect = self.surf.get_rect(center=(400, 550))
+        self.fire = False
 
     def update(self, game_object):
         if game_object.keys[K_LEFT] or game_object.keys[K_a]:
@@ -22,9 +25,12 @@ class Player(pygame.sprite.Sprite):
         if game_object.keys[K_RIGHT] or game_object.keys[K_d]:
             self.rect.move_ip(10, 0)
 
-        if game_object.keys[K_SPACE]:
+        if game_object.keys[K_SPACE] and self.fire == False:
+            self.fire = True
             bullet = Bullet(self.rect.left)
             game_object.bullets.add(bullet)
             game_object.all_sprites.add(game_object.bullets)
+
+        self.fire = False
 
         self_check_bounds(self, game_object)

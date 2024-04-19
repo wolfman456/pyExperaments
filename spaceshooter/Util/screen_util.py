@@ -13,7 +13,7 @@ def game_over(game_object):
 
 
 def add_enemy(game_object, event):
-    if event.type == game_object.ADD: #and game_object.enemy_count <= 4:
+    if event.type == game_object.ADD and len(game_object.enemies) <= 3:
         enemy = Enemy(game_object)
         game_object.enemies.add(enemy)
         game_object.all_sprites.add(game_object.enemies)

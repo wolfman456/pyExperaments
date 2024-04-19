@@ -12,8 +12,8 @@ def check_collision(game_object):
     if pygame.sprite.spritecollideany(game_object.player, game_object.enemies):
         game_object.player.kill()
 
-    pygame.sprite.groupcollide(game_object.bullets, game_object.enemies, True, True)
-
-
-
-
+    if pygame.sprite.groupcollide(game_object.bullets, game_object.enemies, True, True):
+        game_object.score.increment()
+        print("score : " + str(game_object.score.score))
+        game_object.enemy_count -= 1
+        print(game_object.enemy_count)

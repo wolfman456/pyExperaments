@@ -12,6 +12,8 @@ class HighScore:
 
     def save(self):
         try:
+            new_score = (self.player_name, self.score, self.date)
+            self.high_scores.append(new_score)
             with open(PATH, "a") as high_scores_file:
                 for score in self.high_scores:
                     high_scores_file.write(str(score) + "\n")

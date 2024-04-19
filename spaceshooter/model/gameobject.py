@@ -32,7 +32,6 @@ class ShooterObject:
         self.welcome_message = WelcomeMessage(self)
         self.enemy_count = 0
 
-
     def _init_game(self):
         pygame.init()
         pygame.display.set_caption('Space shooter')
@@ -54,6 +53,7 @@ class ShooterObject:
     def _draw(self):
         if self.game_loop:
             draw_to_screen(self)
+            self.score.update()
         if self.welcome_loop:
             draw_welcome(self)
 
