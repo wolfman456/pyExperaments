@@ -1,6 +1,6 @@
 import pygame
 
-from Util.loadimage import loadimage
+from Util.loadimage import load_image
 from Util.screen_util import draw_welcome, draw_to_screen, add_enemy
 from Util.util import check_collision
 from model import player
@@ -24,11 +24,11 @@ class ShooterObject:
         self.ADD = pygame.USEREVENT + 1
         self.all_sprites.add(self.player, self.enemies, self.bullets)
         self.start_button = Button(self.screen.get_width() / 4, self.screen.get_height() / 2 + 40,
-                                   loadimage('start-1.png'), 0.8)
+                                   load_image('start-1.png'), 0.8)
         self.exit_button = Button(self.screen.get_width() / 4 * 2 + 120, self.screen.get_height() / 2 + 40,
-                                  loadimage('exit-1.png'), 0.8)
+                                  load_image('exit-1.png'), 0.8)
         self.high_score = Button(self.screen.get_width() / 4 + 150, self.screen.get_height() / 2 + 40,
-                                 loadimage('high_score.png'), 0.8)
+                                 load_image('high_score.png'), 0.8)
         self.welcome_message = WelcomeMessage(self)
         self.enemy_count = 0
 
@@ -65,6 +65,9 @@ class ShooterObject:
             if event.type == pygame.QUIT or (
                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    self.player.fire(self)
             add_enemy(self, event)
             self.keys = pygame.key.get_pressed()
 
