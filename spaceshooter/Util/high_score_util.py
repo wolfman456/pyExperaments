@@ -7,7 +7,7 @@ class HighScore:
     def __init__(self):
         self.player_name = None
         self.score = None
-        self.date = None
+        self.date = datetime.datetime.today().strftime("%d/%m/%Y")
         self.high_scores = []
 
     def save(self):

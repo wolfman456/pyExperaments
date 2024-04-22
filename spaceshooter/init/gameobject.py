@@ -1,5 +1,6 @@
 import pygame
 
+from Util.game_over_screen import GameOver
 from Util.loadimage import load_image
 from Util.screen_util import draw_welcome, draw_to_screen, add_enemy
 from Util.util import check_collision
@@ -7,6 +8,7 @@ from model import player
 from model.button import Button
 from model.score import Score
 from model.welcome_message import WelcomeMessage
+import pygame_gui
 
 
 class ShooterObject:
@@ -14,7 +16,9 @@ class ShooterObject:
         self._init_game()
         self.game_loop = False
         self.welcome_loop = True
-        self.screen = pygame.display.set_mode((800, 600))
+        self.end_loop = False
+        self.screen_size = (800, 600)
+        self.screen = pygame.display.set_mode(self.screen_size)
         self.player = player.Player()
         self.all_sprites = pygame.sprite.Group()
         self.enemies = pygame.sprite.Group()
@@ -31,6 +35,8 @@ class ShooterObject:
                                  load_image('high_score.png'), 0.8)
         self.welcome_message = WelcomeMessage(self)
         self.enemy_count = 0
+        self.game_over = GameOver(x=self.screen.get_width() / 2-150, y=self.screen.get_height() / 2, game_object=self,
+                                  width=300, height=40)
 
     def _init_game(self):
         pygame.init()
@@ -49,6 +55,8 @@ class ShooterObject:
             self._process_game_logic()
 
             self._draw()
+        while self.end_loop:
+            pass
 
     def _draw(self):
         if self.game_loop:
