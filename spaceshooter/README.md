@@ -9,6 +9,8 @@ to score. The rectangles will be replaced with drawing in this version.
 ## Issues faced :
 
 1. Getting a bullet to collide with enemy ship.
+2. creating buttons
+3. even using oop game has started to feel spaghetti code. 
 
 ## Checklist:
 
@@ -23,7 +25,7 @@ to score. The rectangles will be replaced with drawing in this version.
 | read/write score                | done        |                                                              |
 | collision detection             | done        |                                                              |
 | end Screen                      |             |                                                              |
-| save score                      |             |                                                              |
+| save score                      | done        |                                                              |
 | start screen/create player name | done        | functional buttons lead to more changes then expected        |
 | refactor code                   | first round | multi step process                                           |
 | load image function             | done        |                                                              |

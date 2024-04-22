@@ -8,7 +8,6 @@ from model import player
 from model.button import Button
 from model.score import Score
 from model.welcome_message import WelcomeMessage
-import pygame_gui
 
 
 class ShooterObject:
@@ -35,7 +34,7 @@ class ShooterObject:
                                  load_image('high_score.png'), 0.8)
         self.welcome_message = WelcomeMessage(self)
         self.enemy_count = 0
-        self.game_over = GameOver(x=self.screen.get_width() / 2-150, y=self.screen.get_height() / 2, game_object=self,
+        self.game_over = GameOver(x=self.screen.get_width() / 2 - 150, y=self.screen.get_height() / 2, game_object=self,
                                   width=300, height=40)
 
     def _init_game(self):
