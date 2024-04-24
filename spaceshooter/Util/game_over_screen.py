@@ -15,10 +15,13 @@ class GameOver:
         self.ui_refresh = self.game_object.timer.tick(60) / 1000
         self.manager = pygame_gui.UIManager(self.game_object.screen_size)
         self.high_score = HighScore()
+        font = pygame.font.Font(None, 36)
+        self.game_over_text = font.render("GAME OVER", True, "white")
+
         pygame_gui.elements.UITextEntryLine(
             relative_rect=pygame.Rect((self.x, self.y), (self.width, self.height)),
             manager=self.manager,
-            object_id='#main_text_entry')
+            object_id='#main_text_entry', initial_text="Name")
 
     def main(self):
         while True:
@@ -30,6 +33,10 @@ class GameOver:
         pygame.display.update()
         self.game_object.screen.fill((0, 0, 0))
         self.manager.draw_ui(self.game_object.screen)
+        self.game_object.screen.blit(
+            self.game_over_text, (
+                self.game_object.screen.get_width() / 2 - 75, self.game_object.screen.get_heigh() / 2)
+        )
         pygame.display.update()
 
     def _handle_input(self):

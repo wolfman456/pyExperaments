@@ -15,7 +15,6 @@ class ShooterObject:
         self._init_game()
         self.game_loop = False
         self.welcome_loop = True
-        self.end_loop = False
         self.screen_size = (800, 600)
         self.screen = pygame.display.set_mode(self.screen_size)
         self.player = player.Player()
@@ -54,8 +53,6 @@ class ShooterObject:
             self._process_game_logic()
 
             self._draw()
-        while self.end_loop:
-            pass
 
     def _draw(self):
         if self.game_loop:
