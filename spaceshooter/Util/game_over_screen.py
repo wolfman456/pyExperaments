@@ -5,6 +5,8 @@ import sys
 from Util.high_score_util import HighScore
 
 
+GAME_OVER = True
+
 class GameOver:
     def __init__(self, x, y, width, height, game_object):
         self.x = x
@@ -29,14 +31,14 @@ class GameOver:
             self._draw()
 
     def _draw(self):
-        self.manager.update(self.ui_refresh)
-        pygame.display.update()
-        self.game_object.screen.fill((0, 0, 0))
-        self.manager.draw_ui(self.game_object.screen)
-        self.game_object.screen.blit(
-            self.game_over_text, (
-                self.game_object.screen.get_width() / 2 - 75, self.game_object.screen.get_heigh() / 2)
-        )
+        while GAME_OVER:
+            self.manager.update(self.ui_refresh)
+            self.game_object.screen.fill((0, 0, 0))
+            self.manager.draw_ui(self.game_object.screen)
+            self.game_object.screen.blit(
+                self.game_over_text, (
+                    self.game_object.screen.get_width() / 2 - 75, self.game_object.screen.get_height() / 2 - 40)
+            )
         pygame.display.update()
 
     def _handle_input(self):
